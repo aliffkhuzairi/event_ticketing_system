@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        .chatbot-container {
+            display: none; /* Hidden by default */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            flex-direction: column;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .chatbot-header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .chatbot-body {
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #f7f7f7;
+        }
+
+        .chatbot-input-container {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        #chatbot-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #chatbot-send-btn {
+            margin-left: 10px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chatbot-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbot-container" class="chatbot-container">
+        <div class="chatbot-header">
+            <span>Chatbot</span>
+            <button id="chatbot-close-btn">&times;</button>
+        </div>
+        <div id="chatbot-body" class="chatbot-body">
+            <div class="chatbot-messages" id="chatbot-messages"></div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Type your message..." />
+                <button id="chatbot-send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+    <button id="chatbot-toggle-btn" class="chatbot-toggle-btn">💬</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatbotContainer = document.getElementById('chatbot-container');
+            const toggleBtn = document.getElementById('chatbot-toggle-btn');
+            const closeBtn = document.getElementById('chatbot-close-btn');
+
+            toggleBtn.addEventListener('click', () => {
+                chatbotContainer.style.display = 'flex';
+                toggleBtn.style.display = 'none';
+            });
+
+            closeBtn.addEventListener('click', () => {
+                chatbotContainer.style.display = 'none';
+                toggleBtn.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

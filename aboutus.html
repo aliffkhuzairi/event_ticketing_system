@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Eventure</title>
+    <link rel="stylesheet" href="style/aboutus.css">
+    <link rel="stylesheet" href="style/chatbot.css">   
+</head>
+<body>
+    <div id="headerPlaceholder"></div>
+    <main>
+        <section class="about-hero">
+            <div class="hero-content">
+                <h1>About Eventure</h1>
+                <p>Your gateway to unforgettable events and adventures.</p>
+            </div>
+        </section>
+        
+        <section class="about-intro">
+            <div class="container">
+                <h2>Who We Are</h2>
+                <p>Eventure was born from the idea of combining the joy of events with the thrill of adventure. 
+                Whether you're a concert lover, a sports enthusiast, or a curious explorer, our platform is designed 
+                to connect you to experiences that ignite your passions.</p>
+            </div>
+        </section>
+
+        <section class="about-mission">
+            <div class="container">
+                <h2>Our Mission</h2>
+                <p>To make event discovery and ticketing seamless and exciting, helping people create lifelong memories.</p>
+            </div>
+        </section>
+
+        <section class="about-values">
+            <div class="container">
+                <h2>What We Value</h2>
+                <ul>
+                    <li><strong>Inclusivity:</strong> We believe events should be accessible to everyone.</li>
+                    <li><strong>Innovation:</strong> We are constantly evolving to deliver the best user experience.</li>
+                    <li><strong>Community:</strong> Events bring people together, and we're here to make that easier.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="about-journey">
+            <div class="container">
+                <h2>Our Journey</h2>
+                <p>Founded in 2024, Eventure started with a mission to revolutionize the way people connect with events. 
+                Today, we serve a wide range of categories, including music, sports, theatre, and more. Each event is 
+                an opportunity to embark on a new adventure.</p>
+            </div>
+        </section>
+    </main>
+    <div id="footerPlaceholder"></div>
+    <div id="chatbot-container" class="chatbot-container">
+        <div class="chatbot-header">
+            <span>Chatbot</span>
+            <button id="chatbot-close-btn">&times;</button>
+        </div>
+        <div id="chatbot-body" class="chatbot-body">
+            <div class="chatbot-messages" id="chatbot-messages"></div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Type your message..." />
+                <button id="chatbot-send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+    <button id="chatbot-toggle-btn" class="chatbot-toggle-btn">💬</button>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/chatbot.js" defer></script>
+</body>
+</html>

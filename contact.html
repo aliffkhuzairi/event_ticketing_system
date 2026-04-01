@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Eventure</title>
+    <link rel="stylesheet" href="/style/contact.css">
+    <link rel="stylesheet" href="style/chatbot.css">   
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="headerPlaceholder"></div>
+    <main>
+        <section class="contact-header">
+            <h1>Contact Us</h1>
+            <p>Have questions or need assistance? Reach out to us, and we’ll be happy to help!</p>
+        </section>
+
+        <section class="contact-content">
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Enter your subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="contact-btn">Submit</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> support@eventure.com</p>
+                <p><strong>Phone:</strong> +1-800-555-0123</p>
+                <p><strong>Address:</strong> Eventure HQ</p>
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footerPlaceholder"></div>
+    <div id="chatbot-container" class="chatbot-container">
+        <div class="chatbot-header">
+            <span>Chatbot</span>
+            <button id="chatbot-close-btn">&times;</button>
+        </div>
+        <div id="chatbot-body" class="chatbot-body">
+            <div class="chatbot-messages" id="chatbot-messages"></div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Type your message..." />
+                <button id="chatbot-send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+    <button id="chatbot-toggle-btn" class="chatbot-toggle-btn">💬</button>
+
+    <script src="/js/header.js"></script>
+    <script src="/js/footer.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for contacting us. We will respond to your inquiry shortly.');
+            this.reset();
+        });
+    </script>
+    <script src="js/chatbot.js" defer></script>
+</body>
+</html>

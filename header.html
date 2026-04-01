@@ -1,0 +1,86 @@
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eventure</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style/header.css">
+
+<header>
+    <div class="nav-box">
+        <!-- Logo -->
+        <div class="logo"><a href="index.html">Eventure</a></div>
+        <!-- Search Bar -->
+        <div class="search-sec">
+            <form id="headerSearchForm" class="search-bar" action="/search" method="GET">
+                <input id="headerSearchQuery" type="text" placeholder="Search" required>
+                <div class="icons">
+                    <i class="fa-solid fa-camera" title="Camera"></i>
+                    <i class="fa-solid fa-microphone" title="Microphone"></i>
+                </div>
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+    
+        <!-- Navigation -->
+        <div class="nav">
+            <ul class="nav-link">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Find Events</a></li>
+                <li><a id="myPage">My Page</a></li>
+                <div class="act-btn-box" id="authButtons">
+                    <!-- Buttons will be dynamically updated -->
+                </div>
+            </ul>
+            
+        </div>
+        
+        <div class="tgl-btn">
+            <div class="icon search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="icon user">
+                <i onclick="location.href='signin.html'" class="fa-solid fa-user"></i>
+            </div>
+            <div class="icon bars">
+                <i class="fa-solid fa-bars"></i>
+            </div>   
+        </div>
+        
+        
+        <div class="drop-down">
+            <div class="logo-icon">
+                <a href="index.html">Eventure</a>
+                <i class="fa-solid fa-xmark"></i>     
+            </div>
+            <div class="space">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Find Events</a></li>
+                <li><a id="myPageUser" style="cursor: pointer;">My page</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </div>
+            <div class="act-btn-box dd" id="authButtons">
+            </div>
+            
+        </div>
+
+        <div class="drop-down-search">
+            <div class="dd-search">
+                <form id="headerSearchForm" class="search-bar" action="/search" method="GET">
+                    <input id="headerSearchQuery" type="text" placeholder="Search" required>
+                    <div class="icons">
+                        <i class="fa-solid fa-camera" title="Camera"></i>
+                        <i class="fa-solid fa-microphone" title="Microphone"></i>
+                    </div>
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+<script src="js/header.js"></script>
+
+

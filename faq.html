@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Eventure</title>
+    <link rel="stylesheet" href="/style/faq.css">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="headerPlaceholder"></div>
+
+    <main>
+        <section class="faq-header">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to the most common questions about Eventure and our services.</p>
+        </section>
+
+        <section class="faq-content">
+            <div class="faq-item">
+                <h2 class="faq-question">What is Eventure?</h2>
+                <p class="faq-answer">Eventure is a platform that combines the excitement of events and the spirit of adventure, offering seamless ticketing solutions for concerts, sports, expos, and more.</p>
+            </div>
+
+            <div class="faq-item">
+                <h2 class="faq-question">How do I purchase tickets?</h2>
+                <p class="faq-answer">You can browse events on our homepage or search for specific ones. Select the desired event, choose your seats or ticket type, and complete the payment process.</p>
+            </div>
+
+            <div class="faq-item">
+                <h2 class="faq-question">What payment methods do you accept?</h2>
+                <p class="faq-answer">We accept major credit and debit cards, online banking options, and payment services like KakaoPay and NPay.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h2 class="faq-question">How can I contact Eventure support?</h2>
+                <p class="faq-answer">You can reach our support team via the <a href="contact.html">Contact Us</a> page, where you'll find an inquiry form and our contact details.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footerPlaceholder"></div>
+
+    <script src="/js/header.js"></script>
+    <script src="/js/footer.js"></script>
+    <script>
+        // Toggle FAQ Answer Visibility
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    answer.classList.toggle('visible');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

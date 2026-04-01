@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Method</title>
+    <link rel="stylesheet" href="/style/payment.css">
+</head>
+<body>
+    <main>
+        <div class="logo">
+            <h1><a href="index.html">Eventure</a></h1>
+        </div>
+        
+        <div class="payment-container">
+            <!-- Left: Payment Choice -->
+            <nav class="sidebar">
+                <div class="payment-options">
+                    <h2>Payment Methods</h2>
+                    <ul>
+                        <li data-section="credit-card" class="active" value="card">Credit/Debit Card</li>
+                        <li data-section="online-banking" value="bank">Online Banking</li>
+                    </ul>
+                </div>
+            </nav>  
+
+            <!-- Center: Form Details -->
+            <div class="main-content">
+                <!-- Credit Card -->
+                <section id="credit-card" class="section active">
+                    <h2>Credit/Debit Card</h2>
+                    <div id="payment-details-container">
+                        <div id="cardContainer">
+                            <!-- <div class="card-details">
+                                <div class="radio">
+                                    <input type="radio" id="card-${index}" name="payment-card" value="${index}">
+                                </div>
+                                <div class="detail">
+                                    <p><strong>${card.type}</strong></p>
+                                    <p>**** **** **** ${card.cardNumber.slice(-4)}</p>
+                                    <p>${card.name}</p>
+                                </div>     
+                            </div> -->
+                        </div>
+                        <button id="addNewCardBtn" class="add-card-btn">+ Add Card</button>
+                    </div>
+                    <!-- Add Card Form if dont want to use the current saved card -->
+                    <div id="add-card-section" style="display: none;">
+                        <div class="add-card">
+                            <form id="addCardForm">
+                                <input type="text" id="cardName" placeholder="Name on Card" required>
+                                <input type="text" id="cardNumber" placeholder="Card Number" maxlength="19" required>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" id="expiryDate" placeholder="MM/YY" required maxlength="5" required>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" id="cvv" placeholder="CVV" required maxlength="3" required>
+                                    </div>
+                                    
+                                </div>
+                                <!-- <input type="email" id="card-email" placeholder="Enter Your Email"> -->
+                                <div class="btn-add-card">
+                                    <button type="submit" class="save-card-btn">Add Card</button>
+                                    <button type="button" id="cancelAddCardBtn" class="cancel-card-btn">Cancel</button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                        
+                    </div>
+                </section>
+                
+                <!-- Online Banking -->
+                <section id="online-banking" class="section">
+                    <form id="onlineBankingForm">
+                        <div class="form-group-bank">
+                            <div>
+                                <h2>Select Your Bank:</h2>
+                            </div>
+                            
+                            <div id="bank-options">
+                                <!-- 
+                                    <button type="button" class="bank-button">${bank}</button>
+                                -->
+                                <!-- Bank Option as button -->
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>   
+
+            <!-- Right: Ticket Summary -->
+            <div class="payment-summary">
+                <h2>Purchase Summary</h2>
+                <div id="purchase-summary" class="summary-box">
+                    <!-- <div class="word" style="display: flex; justify-content: space-between;">
+                        <strong>Event:</strong> <p>${ticketDetails.event}</p>
+                    </div>
+                    <div class="word" style="display: flex; justify-content: space-between;">
+                        <strong>Date:</strong> <p>${ticketDetails.date}</p>
+                    </div>
+                    <div class="word" style="display: flex; justify-content: space-between;">
+                        <strong>Seats/Quantity:</strong> <p>${ticketDetails.seats}</p>
+                    </div>
+                    <div class="word" style="display: flex; justify-content: space-between;">
+                        <strong>Total Price:</strong> <p>${ticketDetails.total}</p>
+                    </div> -->
+                </div>
+                <div class="btn">
+                    <div class="btn-box">
+                        <button type="submit" id="confirm-payment">Pay Now</button>
+                    </div>   
+                    
+                </div>
+                
+            </div>
+    </main>
+
+    <script src="js/payment.js"></script>
+</body>
+</html>

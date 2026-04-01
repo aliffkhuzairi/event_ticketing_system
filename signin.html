@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/signin.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="forms">  
+            
+            <!-- Sign In -->
+            <div class="form signin">
+                <div class="title">
+                    <span><a href="index.html" class="logo">Eventure</a></span>
+                </div>
+                <form id="signinForm">
+                    <div class="input-field">
+                        <input type="text" id="emailInput" placeholder="Username/Email" required>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" id="passwordInput" placeholder="Password" required>
+                        <i class="fa-solid fa-lock icon"></i>
+                        <i class="fa-solid fa-eye-slash showhidePw"></i>
+                    </div>
+                    <div class="forgot">
+                        <a href="#" type="text">Forgot Password?</a>
+                    </div> 
+                    
+                    <div class="text-p">                   
+                        <p>or other method</p>
+                    </div>
+                    <div class="social-box">
+                        <a href="https://www.facebook.com/" class="social facebook" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.google.com/" class="social google" target="_blank">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="https://www.apple.com/" class="social apple" target="_blank">
+                            <i class="fab fa-apple"></i>
+                        </a>
+                    </div>
+                    <div class="input-field">
+                        <button type="submit">Sign In</button>
+                    </div>
+                    <div class="login-signup">
+                        <p>Don't have an account? <a id="signUp">Sign Up</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sign Up -->
+            <div class="form signup">
+                <div class="title">
+                    <span><a href="index.html" class="logo">Eventure</a></span>
+                </div>
+                <form id="signupForm">
+                    <div class="input-field">
+                        <input type="text" id="signupName" placeholder="Username" required>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" id="signupEmail" placeholder="Email" required>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" id="signupPassword" placeholder="Password" required>
+                        <i class="fa-solid fa-lock icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" id="signupPasswordConfirm" placeholder="Confirm Password" required>
+                        <i class="fa-solid fa-lock icon"></i>
+                        <i class="fa-solid fa-eye-slash showhidePw"></i>
+                    </div>
+                    
+                    <div class="text-p">                   
+                        <p>Sign up with</p>
+                    </div>
+                    <div class="social-box">
+                        <a href="#" class="social">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                        <a href="#" class="social">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <div class="input-field">
+                        <button type="submit">Sign Up</button>
+                    </div>
+                    <div class="login-signup">
+                        <p>Already have an account? <a id="signIn">Sign In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/signin.js"></script>
+</body>
+</html>

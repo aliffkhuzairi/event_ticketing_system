@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Pacifico&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Lexend", sans-serif;
+}
+
+body{
+    background-image: url(/img/concert.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;  
+}
+
+body::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000085;
+    z-index: -1;  
+}
+
+main{
+    padding: 40px 80px;
+    min-height: 70vh;
+}
+
+main .logo{
+    display: flex;
+    justify-content: center;
+}
+main a{
+    font-size: 54px;
+    font-family: 'Pacifico', sans-serif;
+    color: #fff;
+    align-self: center;
+    text-decoration: none;
+    letter-spacing: 4px;
+}
+
+.payment-container{
+    background-color: #eee;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+}
+
+/* Sidebar */
+.payment-container .sidebar{
+    flex: 1;
+    background: #ff9100;
+    color: #fff;
+}
+.sidebar h2 {
+    padding: 30px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.sidebar ul {
+    list-style: none;
+}
+.sidebar li {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #ececec;
+    transition: 0.3s ease-in-out; 
+}
+
+.sidebar li:hover {
+    background: #ececec;
+    color: #313131;
+    
+}
+
+.sidebar li.active {
+    background: #ececec;
+    color: #313131;
+    transition: 0.5s ease;
+}
+
+/* Main Content */
+.main-content {
+    flex: 3;
+    padding: 40px;
+    background: #fff;
+}
+.section {
+    display: none;
+}
+.section.active {
+    display: block;
+}
+
+#cardContainer {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin: 10px 0px;
+}
+
+.card .card-details {
+    display: flex;
+    gap: 5px;
+}
+
+/* Card Form */
+
+.add-card .row{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.row .col{
+    width: 50%;
+}
+
+.row .col input{
+    width: 80%;
+}
+
+.add-card input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.add-card form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border:none;
+    outline: none;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.add-card input:is(:focus){
+    border-bottom-color: #ff9100;
+}
+
+.add-card-btn,
+.save-card-btn {
+    margin-top: 10px;
+    padding: 8px 15px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.add-card-btn:hover,
+.save-card-btn:hover {
+    background: #0056b3;
+}
+
+.add-card-btn,
+.save-card-btn,
+.cancel-card-btn {
+    padding: 10px 20px;
+    background-color: #0c1cb3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.save-card-btn {
+    border-radius: 5px;
+}
+
+.add-card .cancel-card-btn {
+    background-color: #d11a2a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-card .cancel-card-btn:hover,
+.close-btn button:hover{
+    background-color: #ff4b5b;
+}
+
+#add-card-section h3,
+.add-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px;
+    display: flex;
+}
+
+.add-card .form-row{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.btn-add-card{
+    margin-top: 10px;
+}
+
+.form-group-bank {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+
+.form-group-bank #bank-options{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
+    gap: 10px;
+    /* border: 1px solid black; */
+}
+
+
+#bank-options button{
+    width: 100%;
+    max-width: 200px;
+    margin: 5px;
+    padding: 10px;
+    background-color: #dddddd;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#bank-options button:hover {
+    background-color: #ff9100;
+    transition: 0.3s ease;
+    color: #fff;
+}
+
+#bank-options button.active {
+    background-color: #ff9100;
+    color: white;
+}
+
+.payment-container .payment-summary{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.payment-summary h2{
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.payment-summary p{
+    font-size: 16px;
+}
+
+.payment-summary .summary-box {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.payment-summary .summary-box p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.payment-summary .btn{
+    /* border: 1px solid black; */
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding-bottom: 20px;
+}
+
+.btn .btn-box{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.btn button{
+    width: 100%;
+    max-width: 550px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    
+}
+
+.btn button:hover{
+    background-color: #0e20c2;
+    color: #fff;
+}
+
+@media (max-width: 1024px){
+    
+    .payment-container{
+        flex-direction: column;
+    }
+
+    .main-content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .btn button{
+        width: 100%;
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 685px){
+    main{
+        padding: 0;
+    }
+
+    #cardContainer{
+        display: flex;
+        flex-wrap: wrap;
+        /* align-items: center; */
+        justify-content: center;
+    }
+
+    .sidebar h2{
+        padding: 10;
+        margin: 0;
+    }
+
+    .form-group-bank #bank-options{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    
+}
+
+@media (max-width: 480px) {
+    .row {
+        flex-direction: column;
+        width: 100%;
+    }
+    .row .col{
+        width: 100%;
+    }
+    
+    .row .col input{
+        width: 100%;
+    }
+
+}

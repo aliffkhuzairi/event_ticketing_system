@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend', serif;
+}
+
+body{
+    background-image: url(/img/concert.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;  
+}
+
+body::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000085;
+    z-index: -1;  
+}
+
+main {
+    padding-top: 90px
+}
+
+/* Categories Page Layout */
+.categories-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    position: fixed;
+    top: 71px;
+    left: 0;
+    z-index: 222;
+}
+.category-title h1 {
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Desktop Category Buttons */
+
+.desktop-categories {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.category-btn {
+    padding: 5px 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #b4b3b3;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category-btn:hover {
+    border:none;
+    background-color: #ff9100;
+    color: #fff;
+}
+
+.category-btn.active {
+    background-color: #ff9100;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Sort Container */
+.sort-container {
+    margin-top: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: right;
+}
+
+.sort-container label {
+    font-size: 14px;
+}
+
+.sort-container select {
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.sort-container select:hover {
+    border-color: #ff9100;
+}
+
+/* Mobile Dropdown Categories */
+.mobile-categories {
+    display: none;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.dropdown-toggle {
+    padding: 10px;
+    background-color: #ff9100;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    /* position: relative; */
+    transition: background-color 0.3s;
+}
+
+.dropdown-toggle:hover {
+    background-color: #ff9100;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu.open {
+    display: block;
+}
+
+.dropdown-menu button{
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #fff;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+    background-color: #f5f5f5;
+}
+
+.category-option:hover,
+.category-option.active {
+    background-color: #f4f4f4;
+}
+
+
+
+/* Events Display */
+.events-display {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack the children vertically */
+    justify-content: center;
+    margin-top: 20vh;
+    padding: 0 50px;
+}
+
+
+/* Scrollable Events Container */
+.events-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Event Card */
+.event-card {
+    width: calc(25% - 20px);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+    border: none;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.event-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.event-details h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+    transition: 0.2s;
+}
+.dates-dropdown {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover and Focus Effects */
+.dates-dropdown:hover,
+.dates-dropdown:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Dropdown Options */
+.dates-dropdown option {
+    padding: 8px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Style for Event Cards to Ensure Space for Dropdown */
+.event-details {
+    margin-top: 10px;
+}
+
+.event-details a{
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+    transition: 0.3s ease;
+}
+
+.event-details a:hover{
+    color: #ff9100;
+}
+
+.event-details .dates-dropdown {
+    margin-top: 8px;
+}
+
+.dates-dropdown{
+    background: #efefef;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.event-card h3:hover {
+
+    color: #ff9100;
+}
+
+.event-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+
+    .events-display {
+        padding: 0;
+    }
+
+    .event-card {
+        width: calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 768px) {
+    .event-card {
+        width: 80%; /* Full width on mobile */
+    }
+
+    .desktop-categories {
+        display: none;
+    }
+
+    .mobile-categories {
+        display: block;
+    }
+}

@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lexend", sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+main{
+    padding-bottom: 20px;
+}
+
+.about-hero {
+    background:#ff9100;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.about-hero .hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.about-hero .hero-content p {
+    font-size: 20px;
+}
+
+:is(.about-intro, .about-mission, .about-values, .about-journey, .about-team) :is(.container) {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+:is(.about-intro, .about-mission, .about-values, .about-journey, .about-team ) :is(h2) {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+:is(.about-intro, .about-mission, .about-values, .about-journey, .about-team ) 
+:is(p, li, h2,ul) {
+    color: #555;
+    list-style-type: disc;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.footer-content {
+    font-size: 14px;
+}

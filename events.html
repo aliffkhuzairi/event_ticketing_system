@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="/style/events.css">
+    <link rel="stylesheet" href="style/chatbot.css">   
+</head>
+<body>
+    <div id="headerPlaceholder"></div>
+    <main>
+        <section class="categories-page">
+            <div class="category-title">
+                <h1 id="categoryTitle">All Events</h1> <!-- Display active category -->
+            </div>
+            <div class="desktop-categories">
+                <button class="category-btn" data-category="All">All</button>
+                <button class="category-btn" data-category="Concert">Concert</button>
+                <button class="category-btn" data-category="Musical">Musical</button>
+                <button class="category-btn" data-category="Sports">Sports</button>
+                <button class="category-btn" data-category="Theatre">Theatre</button>
+                <button class="category-btn" data-category="Festivals">Festivals</button>
+                <button class="category-btn" data-category="FoodFashion">Food and Fashion</button>
+                <button class="category-btn" data-category="Expos">Expos</button>
+                <button class="category-btn" data-category="Exhibition">Exhibition</button>
+            </div>
+            <div class="mobile-categories">
+                <div id="categoryDropdownToggle" class="dropdown-toggle">Categories</div>
+                <div id="categoryDropdownMenu" class="dropdown-menu">
+                    <button class="category-option" data-category="All">All</button>
+                    <button class="category-option" data-category="Concert">Concert</button>
+                    <button class="category-option" data-category="Musical">Musical</button>
+                    <button class="category-option" data-category="Sports">Sports</button>
+                    <button class="category-option" data-category="Theatre">Theatre</button>
+                    <button class="category-option" data-category="Festivals">Festivals</button>
+                    <button class="category-option" data-category="FoodFashion">Food and Fashion</button>
+                    <button class="category-option" data-category="Expos">Expos</button>
+                    <button class="category-option" data-category="Exhibition">Exhibition</button>
+                </div>
+            </div>
+            <div class="sort-container">
+                <h1 id="categoryTitle"></h1>
+                <label for="sortSelector">Sort By:</label>
+                <select id="sortSelector">
+                    <option value="date-old">Date: Oldest</option>
+                    <option value="date-new">Date: Newest</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="alphabetical-asc">Alphabetical: A-Z</option>
+                    <option value="alphabetical-desc">Alphabetical: Z-A</option>
+                </select>
+            </div>          
+            
+        </section>
+        <section class="events-display">
+            <div class="events-container" id="eventsContainer">
+                <!-- Events will be dynamically loaded here -->
+            </div>
+        </section>
+
+        
+    </main>
+    <div id="footerPlaceholder"></div>
+    <div id="chatbot-container" class="chatbot-container">
+        <div class="chatbot-header">
+            <span>Chatbot</span>
+            <button id="chatbot-close-btn">&times;</button>
+        </div>
+        <div id="chatbot-body" class="chatbot-body">
+            <div class="chatbot-messages" id="chatbot-messages"></div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Type your message..." />
+                <button id="chatbot-send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+    <button id="chatbot-toggle-btn" class="chatbot-toggle-btn">💬</button>
+
+    <script type="module" src="/js/events.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/chatbot.js" defer></script>
+    
+</body>
+</html>

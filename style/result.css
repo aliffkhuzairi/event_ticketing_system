@@ -1,0 +1,325 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+}
+
+body{
+    background-image: url(/img/concert.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;  
+}
+
+body::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000085;
+    z-index: -1;  
+}
+
+main {
+    padding-top: 70px;
+}
+
+.filters-content{
+    padding: 20px;
+    background: #ccc;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.filters-content.active {
+    display: block;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background: #00000075;
+    backdrop-filter: blur(15px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 444;
+    transition: 0.9s ease-in-out;
+    /* overflow-y: auto; */
+}
+
+.filters-content.active label{
+    color: #ffffff;
+}
+
+.filters, .sorting {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.filters label, .sorting label {
+    font-size: 14px;
+    color: #333;
+}
+
+.filters select, .filters input[type="number"], .filters input[type="date"], .sorting select {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+
+.filters select:focus, .filters input[type="number"]:focus, .filters input[type="date"]:focus, .sorting select:focus {
+    border-color: #ff9100;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.filter-actions .btn {
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-actions .btn.apply{
+    background-color: #007bff;
+    transition: 0.2s linear;
+}
+.filter-actions .btn.reset{
+    background-color: #961414;
+    transition: 0.3s linear;
+}
+.filter-actions .btn.apply:hover{
+    background-color: #0056b3;
+}
+.filter-actions .btn.reset:hover{
+    background-color: #6b0404;
+}
+
+.filter-actions .btn:active {
+    scale: 0.9;
+}
+
+.close-filters {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 22px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 555;
+}
+
+@media (max-width: 1024px) {
+    .filters-content {
+        display: none;
+    }
+    .toggle-filters {
+        display: block !important; 
+        position: fixed;
+        top: 80px;
+        right: 10px;
+        width: 100px;
+        background: #ff9100;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        color: white;
+        padding: 10px;
+        border: none;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        z-index: 444;
+    }
+    .filters, .filter-actions, .sorting{
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .filter-actions, .sorting{
+        margin-top: 10px;
+    }
+    .close-filters{
+        display: block;
+    }
+    .results-count{
+        margin-top: 80px;
+    }
+}
+
+/* Overlay for background disabling */
+.filter-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 333;
+}
+
+/* Show the overlay when active */
+.filter-overlay.active {
+    display: block;
+}
+
+/* Results Container */
+.no-result {
+    display: block; 
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.results-count {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: 60px;
+}
+
+.results-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 50px;
+}
+
+/* Individual Event Card */
+.result-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 300px;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
+.dates-dropdown {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover and Focus Effects */
+.dates-dropdown:hover,
+.dates-dropdown:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Dropdown Options */
+.dates-dropdown option {
+    padding: 8px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+}
+/* Style for Event Cards to Ensure Space for Dropdown */
+
+.event-details .dates-dropdown {
+    margin-top: 8px;
+}
+
+.dates-dropdown{
+    background: #efefef;
+    padding: 5px;
+    font-size: 12px;
+}
+
+
+.result-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Event Image */
+.event-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Event Details */
+.event-details {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.event-details h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    transition: 0.3s;
+}
+.event-details h3:hover {
+    color: #ff9100;
+}
+
+.event-details p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 10px;
+    color: #555;
+}
+
+/* Price Highlight */
+.event-details .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.event-details .seating {
+    font-size: 14px;
+    font-weight: bold;
+    color: #777;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .result-card {
+        width: 100%;
+    }
+}

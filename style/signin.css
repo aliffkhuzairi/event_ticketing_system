@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Pacifico&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-image: url(/img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    overflow-x: hidden;
+}
+body::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000085;
+    z-index: -1;  
+}
+
+.container{
+    width: 100%;
+    max-width: 430px;
+    border-radius: 20px;
+    background: #fff; 
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+}
+
+.container .forms{    
+    display: flex;
+    align-items: center;
+    height: 440px;
+    width: 200%;
+    transition: height 0.2s ease;
+}
+
+.container.active .forms{
+    height: 645px;
+}
+
+.container .form{
+    padding: 30px;
+    width: 50%;
+    background-color: #fff;
+    transition: margin-left 0.18s ease;
+    border-radius: 20px;
+}
+.container.active .signin{
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.container .signup{
+    opacity:0;
+    transition: opacity 0.09s ease;
+}
+
+.container.active .signup{
+    opacity:1;
+    transition: opacity 0.2s ease;
+}
+
+
+.title{
+    text-align: center;
+}
+
+.container .form .logo{
+    font-size: 36px;
+    color: #222;
+    font-weight: 700;
+    position: relative;
+    font-family: 'Pacifico', sans-serif;
+
+}
+
+.form .input-field{
+    position: relative;
+    margin-top: 30px;
+    height: 40px;
+    width: 100%;
+}
+
+.input-field input{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding: 0 35px;
+    border:none;
+    outline: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.5s ease;
+}
+
+.input-field input:is(:focus, :valid){
+    border-bottom-color: #ff9100;
+}
+
+.input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 18px;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+    color: #ff9100;
+}
+
+.input-field i.icon{
+    left: 0;
+}
+
+.input-field i.showhidePw{
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.forgot{
+    text-align: right;
+    margin-top: 5px;
+}
+
+.forgot a{
+    text-decoration: none;
+}
+
+.forgot a:hover{
+    text-decoration: underline;
+}
+
+.form .text-p{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-box{
+    text-align: center;
+}
+
+.social-box a{
+    height: 40px;
+    width: 40px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    margin: 15px 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px rgb(59, 59, 59);
+    transition: 0.3s;
+}
+
+.social.facebook:hover{
+    background-color: #1877f2;
+    color: white;
+}
+.social.google:hover{
+    background-color: #DB4437;
+    color: white;
+}
+.social.apple:hover{
+    background-color: #000;
+    color: white;
+}
+
+.input-field button{
+    padding: 15px 10px;
+    width: 100%;
+    color: #fff;
+    background-color: #16139e;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+.input-field button:hover{
+    background-color: #0c099e;
+}
+.input-field button:active{
+    transform: scale(0.95);
+}
+
+.login-signup{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-signup a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-signup a:hover{
+    text-decoration: underline;
+}
+

@@ -1,0 +1,162 @@
+<!-- Updated index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventure</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="style/chatbot.css">    
+
+</head>
+<body>
+    <div id="headerPlaceholder"></div>
+    <main>
+        <section class="hero">
+            <div class="slide-wrapper swiper-wrapper">
+                
+            </div>
+            <div class="slider-navigation">
+                <a class="fa-solid fa-caret-left" id="prev-btn"></a>
+                <a class="fa-solid fa-caret-right"id="next-btn"></a>
+            </div>
+            
+            <div class="slider-controls swiper-pagination">
+            </div>
+        </section>
+        
+        <section class="category">
+            <div class="category-nav">
+                <div class="categories-list">
+                    <button class="category-btn" data-category="Concert">Concert</button>
+                    <button class="category-btn" data-category="Musical">Musical</button>
+                    <button class="category-btn" data-category="Sports">Sports</button>
+                    <button class="category-btn" data-category="Theatre">Theatre</button>
+                    <button class="category-btn" data-category="Festivals">Festivals</button>
+                    <button class="category-btn" data-category="FoodFashion">Food and Fashion</button>
+                    <button class="category-btn" data-category="Expos">Expos</button>
+                    <button class="category-btn" data-category="Exhibition">Exhibition</button>
+                </div>
+            </div>
+            <section class="featured">               
+                <div class="category-container">
+                    <!-- <h2>Concert</h2> -->
+                    <div class="list-event" id="concert-events">
+                        <!-- <div class="event-card">
+                            <img src="${event.image}" alt="${event.title}">
+                        <div class="event-card-content">
+                            <h3>${event.title}</h3>
+                            <p><strong></strong> ${firstDate}</p>
+                            <p><strong></strong> ${event.venue}</p>
+                            <p><strong></strong> ${event.price ? `${event.price} KRW` : 'Free'}</p>
+                        </div>
+                        </div> -->
+                    </div>
+                    <div class="view-all">
+                        <button onclick="redirectToCategory('Concert')">View More</button>
+                    </div>                          
+                </div>
+                <div class="category-container">
+                    <!-- <h2>Musical</h2> -->
+                    <div class="list-event" id="musical-events">
+                    </div>
+                    <div class="view-all">
+                        <button onclick="redirectToCategory('Musical')">View More</button>
+                    </div>
+                </div>
+                <div class="category-container">
+                    <!-- <h2>Sports</h2> -->
+                    <div class="list-event" id="sports-events"></div>
+                    <div class="view-all">
+                        <button onclick="redirectToCategory('Sports')">View More</button>
+                    </div>
+                </div>
+                <div class="category-container">
+                    <!-- <h2>Theatre</h2> -->
+                    <div class="list-event" id="theatre-events"></div>
+                    <div class="view-all">
+                        <button onclick="redirectToCategory('Theatre')">View More</button>
+                    </div>                          
+                </div>
+                <div class="category-container">
+                    <!-- <h2>Festivals</h2> -->
+                    <div class="list-event" id="festivals-events"></div>
+                    <div class="view-all">
+                        <button onclick="redirectToCategory('Festivals')">View More</button>
+                    </div>
+                </div>
+                <div class="category-container">
+                    <!-- <h2>Food and Fashion</h2> -->
+                    <div class="list-event" id="foodfashion-events"></div>
+                    <div class="view-all">
+                        <button onclick="redirectToCategory('FoodFashion')">View More</button>
+                    </div>                          
+                </div>
+                <div class="category-container">
+                    <!-- <h2>Expos</h2> -->
+                    <div class="list-event" id="expos-events"></div>
+                    <div class="view-all">
+                        <button onclick="redirectToCategory('Expos')">View More</button>
+                    </div>
+                </div>
+                <div class="category-container">
+                    <!-- <h2>Exhibition</h2> -->
+                    <div class="list-event" id="exhibition-events"></div>
+                    <div class="view-all">
+                        <button onclick="redirectToCategory('Exhibition')">View More</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="upcoming-events">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+                <p>Don't miss out on these amazing events happening soon!</p>
+            </div>
+            <div class="event-grid" id="upcoming-events-container">
+                <!-- <div class="event-card">
+                            <img src="${event.image}" alt="${event.title}">
+                        <div class="event-card-content">
+                            <h3>${event.title}</h3>
+                            <p><strong></strong> ${firstDate}</p>
+                            <p><strong></strong> ${event.venue}</p>
+                            <p><strong></strong> ${event.price ? `${event.price} KRW` : 'Free'}</p>
+                        </div>
+                        </div> -->
+            </div>
+        </section>
+        <section class="event-countdown">
+            <h2>Next Big Event</h2>
+            <div id="countdown-timer">
+                <span id="days">00</span>d :
+                <span id="hours">00</span>h :
+                <span id="minutes">00</span>m :
+                <span id="seconds">00</span>s
+            </div>
+            <p id="event-title"></p>
+        </section>
+    </main>
+    <div id="footerPlaceholder"></div>
+    <div id="chatbot-container" class="chatbot-container">
+        <div class="chatbot-header">
+            <span>Chatbot</span>
+            <button id="chatbot-close-btn">&times;</button>
+        </div>
+        <div id="chatbot-body" class="chatbot-body">
+            <div class="chatbot-messages" id="chatbot-messages"></div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Type your message..." />
+                <button id="chatbot-send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+    <button id="chatbot-toggle-btn" class="chatbot-toggle-btn">💬</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="/js/index.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/chatbot.js" defer></script>
+</body>
+</html>

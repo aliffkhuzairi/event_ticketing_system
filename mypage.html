@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventure</title>
+    <link rel="stylesheet" href="style/mypage.css">
+    <link rel="stylesheet" href="style/chatbot.css">   
+</head>
+<body>
+    <div id="headerPlaceholder"></div>
+    
+    <main>
+        <!-- Sidebar Menu -->
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+        <div class="container">
+            <nav class="sidebar">
+                <div class="username">
+                </div>
+                <ul>
+                    <li data-section="my-ticket" class="active">My Ticket</li>
+                    <li data-section="account-info">Account Information</li>
+                    <li data-section="password">Password</li>
+                    <li data-section="payment-details">Payment Details</li>
+                    <li data-section="close-account">Close Account</li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- My Ticket Section -->
+                <section id="my-ticket" class="section active">
+                    <h2>My Tickets</h2>
+                    <div id="booking-data">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order Date</th>
+                                    <th>Order ID</th>
+                                    <th>Event</th>
+                                    <th>Date</th>
+                                    <th>Seats/Quantity</th>
+                                    <th>Total</th>
+                                    <th>Print Ticket</th>
+                                    <th>Cancel</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody id="booking-data-body">
+                                <!-- <td>${booking.orderDate || 'N/A'}</td>
+                                <td>${booking.id || 'N/A'}</td>
+                                <td>${booking.event}</td>
+                                <td>${booking.date}</td>
+                                <td>${booking.seats}</td>
+                                <td>${booking.total}</td>
+                                <td><button class="cancel-btn" data-id="${booking.id}">Cancel</button></td>
+                                <td><button class="print-btn" data-id="${booking.id}">Print</button></td> -->
+                                <tr>
+                                    <td colspan="8" class="no-bookings">No tickets booked yet.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Account Information Section -->
+                <section id="account-info" class="section">
+                    <h2>Account Information</h2>
+                    <div class="acc-form">
+                        <form id="accountForm">
+                            <div class="user-fix"></div>
+                            <div class="row">
+                                <div class="col">
+                                    <label>First Name: <input type="text" id="firstName" placeholder="Enter your first name"></label>
+                                </div>
+                                <div class="col">
+                                    <label>Last Name: <input type="text" id="lastName" placeholder="Enter your last name"></label>
+                                </div>                              
+                            </div>
+                            <div class="row">
+                                <label>Email: <input type="email" id="email"></label>
+                            </div>
+                            <button type="submit">Save Changes</button>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Password Section -->
+                <section id="password" class="section">
+                    <h2>Change Password</h2>
+                    <div class="pwd-form">
+                        <form id="passwordForm">
+                            <div class="input-field">
+                                <label>Current Password: <input type="password" id="currentPassword"></label>
+                            </div>
+                            <div class="input-field">
+                                <label>New Password: <input type="password" class="password" id="newPassword"></label>
+                            </div>
+                            <div class="input-field">
+                                <label>Confirm Password: <input type="password" class="password" id="confirmPassword"></label>
+                                <i class="fa-solid fa-eye-slash showhidePw"></i>
+                            </div>
+                            <button type="submit">Change Password</button>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Payment Details Section -->
+                 
+                <section id="payment-details" class="section">
+                    <h2>Payment Details</h2>
+                    <div class="payment">
+                        <div id="payment-details-container">
+                            <div id="cardContainer">
+                                <!-- <div class="card-details">
+                                    <p><strong>${cards.type}</strong></p>
+                                    <p>**** **** **** ${cards.cardNumber.slice(-4)}</p>
+                                    <p>${cards.name}</p>
+                                </div>
+                                <div class="card-actions">
+                                    <button class="delete-btn" data-index="${index}">Delete</button>
+                                    ${index === 0 ? '<span class="default-badge">Default</span>' : `<a class="set-default" data-index="${index}">Set As Default</a>`}
+                                </div> -->
+                            </div>
+                            <button id="addNewCardBtn" class="add-card-btn">+ Add New Card</button>
+                        </div>
+                    
+                        <div id="add-card-section" style="display: none;">
+                            <h3>Add Card</h3>
+                            <div class="add-card">
+                                <form id="addCardForm">
+                                    <input type="text" id="cardName" placeholder="Name on Card" required>
+                                    <input type="text" id="cardNumber" placeholder="Card Number" maxlength="19" required>
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="text" id="expiryDate" placeholder="MM/YY" required maxlength="5" required>
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" id="cvv" placeholder="CVV" required maxlength="3" required>
+                                        </div>     
+                                    </div>
+                                        <!-- <input type="email" id="card-email" placeholder="Enter Your Email"> -->
+                                    <div class="btn-add-card">
+                                        <button type="submit" class="save-card-btn">Save Card</button>
+                                        <button type="button" id="cancelAddCardBtn" class="cancel-card-btn">Cancel</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+
+                <!-- Close Account Section -->
+                <section id="close-account" class="section">
+                    <h2>Close Account</h2>
+                    <div class="close-acc">
+                        <form id="closeAccountForm">
+                            <p>Why are you closing your account?</p>
+                            <label><textarea id="closeReason" placeholder="Explain your reason..."></textarea></label>
+                            <div class="close-btn">
+                                <button type="submit" id="closeAccountBtn">Close Account</button>
+                            </div>   
+                        </form>
+                    </div>
+                    
+                </section>
+            </div>
+        </div>
+        <div id="menuOverlay" class="menu-overlay hidden"></div>
+        <!-- Confirmation Overlay -->
+        <div id="overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <p>Are you sure you want to close your account? This action cannot be undone.</p>
+                <button id="confirmCloseBtn">Proceed</button>
+                <button id="cancelCloseBtn">Cancel</button>
+            </div>
+        </div>
+
+    </main>
+    <div id="footerPlaceholder"></div>
+    <div id="chatbot-container" class="chatbot-container">
+        <div class="chatbot-header">
+            <span>Chatbot</span>
+            <button id="chatbot-close-btn">&times;</button>
+        </div>
+        <div id="chatbot-body" class="chatbot-body">
+            <div class="chatbot-messages" id="chatbot-messages"></div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Type your message..." />
+                <button id="chatbot-send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+    <button id="chatbot-toggle-btn" class="chatbot-toggle-btn">💬</button>
+    
+    <script src="js/header.js"></script>
+    <script src="js/mypage.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/chatbot.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,563 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lexend", sans-serif;
+}
+
+body{
+    background-image: url(/img/concert.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+body::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000085;
+    z-index: -1;  
+}
+
+main{
+    padding-top: 90px;
+    min-height: 70vh;
+}
+
+.container {
+    display: flex;
+    min-height: 60vh;
+    width: 100%;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+}
+
+.sidebar-toggle {
+    position: fixed;
+    text-align: left;
+    font-size: 24px;
+    top: 72px;
+    left: 0;
+    background: #ff9100;
+    width: 100%;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 333;
+    display: none;
+}
+
+/* Sidebar */
+/* .container .sidebar {
+    position: fixed;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    margin-top: 30px;
+    background: #402d28;
+    color: #fff;
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+} */
+
+.container .sidebar {
+    width: 20%;
+    background: #ff9100;
+    color: #fff;
+    /* min-height: 300px; */
+}
+
+
+.container .sidebar.open {
+    left: 0;
+    transition: 0.4s ease-in-out;
+}
+
+/* Sidebar toggle button for mobile */
+/* .sidebar-toggle {
+    position: fixed;
+    text-align: left;
+    font-size: 24px;
+    top: 72px;
+    left: 0;
+    background: #ff9100;
+    width: 100%;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1100;
+    /* display: none;
+} */
+
+/* Display sidebar toggle button on smaller screens */
+.username{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    font-family: "Pacifico", serif;
+}
+
+.sidebar ul {
+    list-style: none;
+    
+}
+.sidebar li {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #ececec; 
+}
+
+.sidebar li:hover {
+    background: #ececec;
+    color: #313131;
+    transition: 0.5s ease;
+}
+
+.sidebar li.active {
+    background: #ececec;
+    color: #313131;
+    transition: 0.5s ease;
+}
+
+/* Main Content */
+.main-content {
+    width: 100%;
+    padding: 40px;
+    background: #ececec;
+    /* border: 1px solid red; */
+}
+.section {
+    display: none;
+}
+.section.active {
+    display: block;
+}
+
+/* Table */
+#booking-data table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+#booking-data th, #booking-data td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#booking-data th {
+    background-color: #f18c19;
+    font-weight: bold;
+    color: #ececec;
+}
+
+#booking-data tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+#booking-data button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.4s ease;
+    color: #fff;
+}
+
+#booking-data .cancel-btn {
+    background-color: #d11a2a;
+}
+
+#booking-data .cancel-btn:hover {
+    background-color: #ff4b5b;
+}
+
+#booking-data .print-btn {
+    background-color: #495783;
+}
+
+#booking-data .print-btn:hover {
+    background-color: #394361;
+}
+
+.no-bookings {
+    text-align: center;
+    color: gray;
+    font-style: italic;
+}
+
+.acc-form{
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    margin-top: 10px;
+    /* border: 1px solid red; */
+}
+
+.acc-form p{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.acc-form form label,
+.pwd-form form label,
+.add-card input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.acc-form .row,
+.add-card .row{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.row .col{
+    width: 50%;
+}
+
+.row .col input{
+    width: 80%;
+}
+
+.acc-form form input, 
+.pwd-form form input,
+.add-card form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border:none;
+    outline: none;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.acc-form input:is(:focus),
+.pwd-form input:is(:focus),
+.add-card input:is(:focus){
+    border-bottom-color: #ff9100;
+}
+
+.acc-form button,
+.pwd-form button,
+.add-card button,
+.add-card-btn {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.acc-form button:hover,
+.pwd-form button:hover,
+.add-card button:hover,
+.add-card-btn:hover {
+    background: #0056b3;
+}
+
+.pwd-form{
+    /* border: 1px solid red; */
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+    margin-top: 10px;
+    display: flex;
+}
+
+.pwd-form .input-field{
+    position: relative;
+    width: 100%;
+    /* border: 1px solid green; */
+}
+
+.input-field i{
+    position: absolute;
+    bottom: 10px;
+    right: 4%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+    font-size: 16px;
+}
+
+.input-field input:is(:focus) ~ i{
+    color: #ff9100;
+}
+
+/* Payment */
+#payment-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    width: 400px;
+    min-width: 300px;
+}
+
+.card .delete-btn {
+    background: #d11a2a;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.2s ease;
+}
+
+.card .delete-btn:hover{
+    background: #ff4b5b;
+}
+
+.card .default-badge{
+    align-content: center;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.card-actions .set-default{
+    text-decoration: none;
+    align-content: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.card-actions .set-default:hover{
+    text-decoration: underline;
+}
+
+.save-card-btn {
+    border-radius: 5px;
+}
+
+.add-card .cancel-card-btn {
+    background-color: #d11a2a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-card .cancel-card-btn:hover,
+.close-btn button:hover{
+    background-color: #ff4b5b;
+}
+
+#add-card-section h3,
+.add-card {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px;
+    display: flex;
+}
+
+.add-card .form-row{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.btn-add-card,
+.close-btn,
+.close-acc,
+.close-acc textarea {
+    margin-top: 10px;
+}
+
+.close-acc textarea{
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+}
+.close-btn button {
+    background-color: #d11a2a;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 555; /* Ensure it is above other content */
+    display: none;
+}
+
+.menu-overlay.visible {
+    display: block;
+}
+
+@media (max-width: 1024px){
+
+    .container .sidebar {
+        position: fixed;
+        left: -100%;
+        width: 250px;
+        height: 100%;
+        margin-top: 30px;
+        background: #f18c19;
+        top: 40px;
+        color: #fff;
+        z-index: 666;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .sidebar-toggle{
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #booking-data {
+        width: 100%;
+    }
+    table {
+        display: block;
+        border: none;
+    }
+
+    tbody{
+        background: none;
+        width: 100%;
+    }
+
+    table thead {
+        display: none; /* Hide table headers */
+    }
+
+    table tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        background: #f9f9f9;
+    }
+
+    table td {
+        display: flex;
+        justify-content: space-between;
+        border: none;
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    table td::before {
+        content: attr(data-label); /* Use the data-label attribute for labels */
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-right: 10px;
+        color: #333;
+    }
+
+    .row {
+        flex-direction: column;
+        width: 100%;
+    }
+    .row .col{
+        width: 100%;
+    }
+    
+    .row .col input{
+        width: 100%;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    .card-actions{
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .card .delete-btn {
+        width: 100px;
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+    .close-acc textarea{
+        width: 300px;
+    }
+
+}
+
+
+
+/* Overlay-Print*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.overlay.hidden {
+    display: none;
+}
+.overlay-content {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+.overlay-content button {
+    margin: 10px;
+}
+

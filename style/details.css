@@ -1,0 +1,307 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend', serif;
+}
+
+body{
+    background: #111010;
+    height: 100%;
+}
+
+.img-banner{
+    height: 60vh;
+}
+
+.img{
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    z-index: 2;
+}
+.img::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(0deg, #111010, transparent);
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Main Section Styling */
+.hero{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* margin-top: 20px; */
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    /* border: 1px solid salmon */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 40px;
+    padding: 0 20px;
+}
+   
+.evento{
+    height: 100%;
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    /* background-color: #00000062; */
+    border-radius: 8px;
+    /* border: 1px solid salmon; */
+}
+
+.evento .event-details{
+    padding: 10px 0;
+    /* border: 1px solid salmon; */
+}
+
+.event-title h1{
+    font-size: 36px;
+    text-align: left;
+    color: #fff;
+    justify-items: center;
+    padding: 20px 0;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.event-info{
+    display: flex;
+    flex-direction: column;
+    max-height: fit-content;
+    border-radius: 8px;
+    /* border: 1px solid salmon; */
+}
+
+.event-info .other{
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-info p{
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.buy-ticket{
+    flex: 2;
+    height: 100%;
+    padding: 40px 40px 10px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    /* align-items: center; */
+    /* background-color: #00000062; */
+    border-radius: 8px;
+    /* border: 1px solid salmon; */
+}
+
+.price-container label{
+    color: #fff;
+    font-size: 18px;
+}
+
+.buy-ticket button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+    background-size: 200% auto;
+    width: 100%;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow: 0px 0px 14px -7px #f09819;
+    touch-action: manipulation;
+    transition: 0.5s;
+}
+
+.buy-ticket button:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.buy-ticket button:active {
+    background-color: #914600;
+    transform: scale(0.95);
+}
+
+.calendar{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 50px 0 50px;
+    border-radius: 10px;
+    padding: 0 60px;
+    /* border: 1px solid white; */
+}
+
+.calendar h3{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.calendar .date-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.date-selection button {
+    padding: 10px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 100px;
+}
+
+.date-selection button.active {
+    background: #007BFF;
+    color: #fff;
+    border-color: #007BFF;
+}
+
+.tab-container {
+    /* background: #efefef; */
+    margin-top: 20px;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.wrap{
+    width: 180vmin;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    /* border: 1px solid red; */
+    box-shadow: 0 20px 40px #ffffff9f;
+    border-radius: 20px;
+}
+
+.tab-container .tab-box{
+    /* background: #facca6; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.tab-box h3{
+    padding: 15px 0;
+    /* border: 1px solid salmon; */
+    color: #ffffff;
+    text-align: center;
+    /* border-radius: 5px; */
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tab-container .tab-content {
+    background: #efefef;
+    /* height: 50vh; */
+    padding: 50px;
+}
+
+.tab-content h3{
+    font-size: 28px;
+    /* margin-bottom: 20px; */
+    color: #000224;
+    font-weight: 600;
+}
+
+.tab-content p{
+    text-align: justify;
+    line-height: 1.9;
+    letter-spacing: 0.4px;
+    color: #202238;
+}
+
+.tab-content div {
+    display: none;
+}
+
+.tab-box .active{
+    background: #efefef;
+    color: #000224;
+}
+
+.tab-content .active{
+    display: block;
+    background: #efefef;
+}
+
+@media(max-width: 1024px){
+    .calendar{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .date-selection{
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width: 768px ){
+    .buy-ticket{
+        position: fixed;
+        background: #ddd;
+        width: 90%;
+        text-align: center;
+        height: min-content;
+        padding: 20px;
+        margin: 0;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        
+    }
+    .price-container label{
+        padding-top: 10px;
+        color: #000;
+        /* border: 1px solid red; */
+    }
+
+    .buy-ticket button{
+        height: min-content;
+        /* border: 1px solid red; */
+        margin-top: 10px;
+
+    }
+
+}
+
+
+

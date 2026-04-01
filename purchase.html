@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventure</title>
+    <link rel="stylesheet" href="/style/purchase.css">
+    <link rel="stylesheet" href="style/chatbot.css">   
+</head>
+<body>
+    <div id="headerPlaceholder"></div>
+    <main>
+        <div id="purchase-container">
+            <!-- <h1>Purchase Tickets</h1> -->
+            <div class="purchase-layout">
+                <!-- First Column -->
+                <div class="purchase-content">
+                    <!-- Select Date -->
+                    <div id="date-selection">
+                        <h2>Select Date</h2>
+                        <div id="date-buttons"></div>
+                    </div>
+                    <!-- Seat Selection -->
+                    <div id="seat-selection" style="display: none;">
+                        <h2>Select Seat</h2>
+                        <div id="seat-map"></div>
+                        <div class="indicator">
+                            <div>
+                                <div class="seat-lgd available"></div>
+                                <span>Available</span>
+                            </div> 
+                            <div>
+                                <div class="seat-lgd selected"></div> 
+                                <span>Reserved</span>
+                            </div>
+                            <div>
+                                <div class="seat-lgd reserved"></div> 
+                                <span>Selected</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ticket Quantity Selection -->
+                    <div id="ticket-quantity" style="display: none;"></div>
+                    <!-- User Details -->
+                    <div id="user-details" style="display: none;">
+                        <h2>Enter Your Details</h2>
+                        <div id="userDetailsForm">
+                            <!-- <label>Name:</label> -->
+                            <input type="text" id="userName" placeholder="Enter Your Name" required>
+                            <!-- <label>Email:</label> -->
+                            <input type="email" id="userEmail" placeholder="Email" required>
+                            <!-- <label>Phone:</label> -->
+                            <input type="tel" id="userPhone" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Second Column -->
+                <div class="purchase-sidebar">
+                    <div id="event-img" class="image-event"></div>
+                    <div id="event-summary" class="summary-box">
+                        <!-- <div style="display: flex; flex-direction: column; gap: 5px;">
+                            <h2>${event.title}</h2>
+                            <div class="word"style="display: flex; justify-content: space-between;">
+                                <strong>Venue:</strong><p>${event.venue}</p>
+                            </div>
+                            <div class="word"style="display: flex; justify-content: space-between;">
+                                <strong>Location:</strong><p>${event.location}</p>
+                            </div>
+                            <div class="word"style="display: flex; justify-content: space-between;">
+                                <strong>Date:</strong><p>${displayDate}</p>    
+                            </div>
+                            <div class="word"style="display: flex; justify-content: space-between;">
+                                <strong>Price:</strong><p>${event.price ? `${event.price} KRW` : 'Free Event'}</p>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div id="ticket-summary" class="summary-box">
+                        <!-- <div style="display: flex; flex-direction: column; gap: 5px;">
+                            <h2>Ticket Summary</h2>
+                            <div class="word" style="display: flex; justify-content: space-between;">
+                                <strong>Event:</strong> <p>${event.title}</p>
+                            </div>
+                            <div class="word" style="display: flex; justify-content: space-between;">
+                                <strong>Date:</strong> <p>${selectedDate ? selectedDate.date : '-'}</p>
+                            </div>
+                            <div class="word" style="display: flex; justify-content: space-between;">
+                                <strong>Seats/Quantity:</strong> <p>${seatsText}</p>
+                            </div>
+                            <div class="word" style="display: flex; justify-content: space-between;">
+                                <strong>Price per Ticket:</strong> <p>${event.price ? `${event.price} KRW` : 'Free'}</p>
+                            </div>
+                            <div class="word" style="display: flex; justify-content: space-between;">
+                                <strong>Total:</strong> <p>${event.price ? `${totalPrice} KRW` : 'Free'}</p>
+                            </div>                          
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="confirm-btn" style="display: none;">
+                <button type="button">Confirm and Proceed</button>
+            </div>  
+        </div>
+    </main>
+    <div id="footerPlaceholder"></div>
+    <div id="chatbot-container" class="chatbot-container">
+        <div class="chatbot-header">
+            <span>Chatbot</span>
+            <button id="chatbot-close-btn">&times;</button>
+        </div>
+        <div id="chatbot-body" class="chatbot-body">
+            <div class="chatbot-messages" id="chatbot-messages"></div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Type your message..." />
+                <button id="chatbot-send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+    <button id="chatbot-toggle-btn" class="chatbot-toggle-btn">💬</button>
+    <script type="module" src="/js/purchase.js" ></script>
+    <script src="js/header.js"></script>
+    <script src="js/chatbot.js" defer></script>
+    <script src="js/footer.js" defer></script>
+</body>
+</html>
